@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from '../img/logo.png';
 import './Header.css';
 
@@ -18,7 +19,7 @@ export default function Header() {
             <a href="/" className="menu-item">Missions</a>
           </li>
           <li>
-            <a href="/" className="menu-item">My Profile</a>
+            <NavLink to="/" className="menu-item">My Profile</NavLink>
           </li>
         </ul>
       </nav>
