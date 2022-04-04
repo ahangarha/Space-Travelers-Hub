@@ -25,4 +25,9 @@ header nav ul {
 
 header .menu-item {
   padding: 1rem 0.5rem;
+  text-decoration: none;
+}
+
+header .menu-item.active {
+  text-decoration: underline;
 }

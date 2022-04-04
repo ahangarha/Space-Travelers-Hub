@@ -16,7 +16,7 @@ export default function Header() {
             <a href="/" className="menu-item">Rockets</a>
           </li>
           <li>
-            <a href="/" className="menu-item">Missions</a>
+            <NavLink to="/missions" className="menu-item">Missions</NavLink>
           </li>
           <li>
             <NavLink to="/" className="menu-item">My Profile</NavLink>
