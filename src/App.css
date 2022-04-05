@@ -37,6 +37,7 @@
     transform: rotate(360deg);
   }
 }
+
 .rocket {
   display: flex;
   flex-direction: column;
@@ -47,10 +48,10 @@
 
 .eachRocket {
   display: flex;
-  gap: 5px
- }
+  gap: 5px;
+}
 
 .rocket-image {
   height: 6rem;
-  width:250px;
+  width: 250px;
 }
