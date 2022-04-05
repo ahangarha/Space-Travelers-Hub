@@ -25,6 +25,9 @@ export const fetchRocketsFromServer = () => async (dispatch) => {
 
 const rocketReducer = (state = InitialState, action) => {
   switch (action.type) {
+    case FETCH_ROCKETS:
+      return [...state, action.payload];
+
     default:
       return state;
   }
