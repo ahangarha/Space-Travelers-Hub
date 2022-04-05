@@ -6,7 +6,7 @@ const BOOK_ROCKET = 'BOOK_ROCKETS';
 
 const baseUrl = 'https://api.spacexdata.com/v3/rockets';
 
-const fetchRockets = (rockets) => ({
+export const fetchRockets = (rockets) => ({
   type: FETCH_ROCKETS,
   payload: {
     rockets,

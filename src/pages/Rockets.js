@@ -4,7 +4,6 @@ import { fetchRocketsFromServer, bookRocket } from '../redux/rockets/rockets';
 
 const Rockets = () => {
   const rockets = useSelector((state) => state.rockets);
-  console.log(rockets);
   const dispatch = useDispatch();
   useEffect(() => {
     if (!rockets.length) dispatch(fetchRocketsFromServer());
