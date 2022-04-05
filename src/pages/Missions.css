@@ -1,0 +1,35 @@
+.missionTable {
+  border-collapse: collapse;
+}
+
+.missionTable > tr:nth-child(even) {
+  background-color: #eee;
+}
+
+.missionTable th,
+.missionTable td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+}
+
+.status-badge {
+  background: #777;
+  color: white;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  display: block;
+  text-align: center;
+  padding: 0.15rem;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+.action-button {
+  border: 1px solid #777;
+  border-radius: 0.5rem;
+  display: block;
+  text-align: center;
+  padding: 0.25rem;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}

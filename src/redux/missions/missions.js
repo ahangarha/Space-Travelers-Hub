@@ -1,6 +1,6 @@
 const FETCH_MISSIONS_SUCCESS = 'spaceTraveler/missions/FETCH_MISSIONS_SUCCESS';
 
-const fetchMissionsSuccess = (missions) => ({
+export const fetchMissionsSuccess = (missions) => ({
   type: FETCH_MISSIONS_SUCCESS,
   payload: {
     missions,
