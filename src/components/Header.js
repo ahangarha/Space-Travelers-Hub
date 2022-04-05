@@ -13,13 +13,13 @@ export default function Header() {
       <nav>
         <ul>
           <li>
-            <a href="/" className="menu-item">Rockets</a>
+            <NavLink to="/" className="menu-item">Rockets</NavLink>
           </li>
           <li>
             <NavLink to="/missions" className="menu-item">Missions</NavLink>
           </li>
           <li>
-            <NavLink to="/" className="menu-item">My Profile</NavLink>
+            <NavLink to="/profile" className="menu-item">My Profile</NavLink>
           </li>
         </ul>
       </nav>
