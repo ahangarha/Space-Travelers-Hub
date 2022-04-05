@@ -5,10 +5,10 @@ const FETCH_ROCKETS = 'FETCH_ROCKETS';
 
 const baseUrl = 'https://api.spacexdata.com/v3/rockets';
 
-const fetchRockets = (mappedRockets) => ({
+const fetchRockets = (rockets) => ({
   type: FETCH_ROCKETS,
   payload: {
-    mappedRockets,
+    rockets,
   },
 });
 
@@ -26,7 +26,7 @@ export const fetchRocketsFromServer = () => async (dispatch) => {
 const rocketReducer = (state = InitialState, action) => {
   switch (action.type) {
     case FETCH_ROCKETS:
-      return [...state, action.payload];
+      return [...state, ...action.payload.rockets];
 
     default:
       return state;
