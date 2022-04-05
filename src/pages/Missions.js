@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissions } from '../redux/missions/missions';
+import { fetchMissions, joinMission } from '../redux/missions/missions';
 import './Missions.css';
 
 export default function Missions() {
@@ -33,7 +33,11 @@ export default function Missions() {
                 <span className="status-badge">
                   Not a member
                 </span>
-                <button type="button" className="action-button">
+                <button
+                  type="button"
+                  className="action-button"
+                  onClick={() => dispatch(joinMission(mission.id))}
+                >
                   Join Mission
                 </button>
               </td>
