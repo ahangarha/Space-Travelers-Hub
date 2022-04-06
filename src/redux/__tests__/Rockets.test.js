@@ -1,4 +1,4 @@
-import rocketReducer, { fetchRockets, bookRocket } from '../rockets/rockets';
+import rocketReducer, { fetchRockets, bookRocket, cancelBooking } from '../rockets/rockets';
 
 describe('Test reducer and actions', () => {
   it('Returns initial state with no action', () => {
@@ -15,7 +15,7 @@ describe('Test reducer and actions', () => {
   });
 });
 
-describe('Test if the rocket is successfully booked', () => {
+describe('Test if the rocket booking actions works', () => {
   it('Test if the store is updated when a rocket is booked', () => {
     const intialstate = [
       {
@@ -67,5 +67,61 @@ describe('Test if the rocket is successfully booked', () => {
 
     ];
     expect(rocketReducer(intialstate, bookRocket('1'))).toEqual(resultState);
+  });
+});
+
+describe('Test if the rocket cancel booking actions works', () => {
+  it('Test if the store is updated when a rocket is booked', () => {
+    const intialstate = [
+      {
+        id: '1',
+        name: 'rocket 1',
+        type: 'rocket-1',
+        images: 'rocket-imgs',
+        description: 'tESTING',
+        reserved: true,
+      },
+      {
+        id: '2',
+        name: 'rocket 2',
+        type: 'rocket-2',
+        images: 'rocket-imgs-2',
+        description: 'tESTING-2',
+      },
+      {
+        id: '3',
+        name: 'rocket 3',
+        type: 'rocket-3',
+        images: 'rocket-imgs-3',
+        description: 'tESTING-3',
+      },
+    ];
+
+    const resultState = [
+      {
+        id: '1',
+        name: 'rocket 1',
+        type: 'rocket-1',
+        images: 'rocket-imgs',
+        description: 'tESTING',
+        reserved: false,
+      },
+      {
+        id: '2',
+        name: 'rocket 2',
+        type: 'rocket-2',
+        images: 'rocket-imgs-2',
+        description: 'tESTING-2',
+      },
+      {
+        id: '3',
+        name: 'rocket 3',
+        type: 'rocket-3',
+        images: 'rocket-imgs-3',
+        description: 'tESTING-3',
+      },
+
+    ];
+    expect(rocketReducer(intialstate, cancelBooking('1'))).toEqual(resultState);
   });
 });
