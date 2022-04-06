@@ -30,16 +30,33 @@ export default function Missions() {
                 {mission.description}
               </td>
               <td className="mission-status-cell">
-                <span className="status-badge">
-                  Not a member
-                </span>
-                <button
-                  type="button"
-                  className="action-button"
-                  onClick={() => dispatch(joinMission(mission.id))}
-                >
-                  Join Mission
-                </button>
+                {!mission.joined && (
+                  <>
+                    <span className="status-badge">
+                      Not a member
+                    </span>
+                    <button
+                      type="button"
+                      className="action-button join-button"
+                      onClick={() => dispatch(joinMission(mission.id))}
+                    >
+                      Join Mission
+                    </button>
+                  </>
+                )}
+                {mission.joined && (
+                  <>
+                    <span className="status-badge joined">
+                      Active Member
+                    </span>
+                    <button
+                      type="button"
+                      className="action-button leave-button"
+                    >
+                      Leave Mission
+                    </button>
+                  </>
+                )}
               </td>
             </tr>
           ))
