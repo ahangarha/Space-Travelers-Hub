@@ -2,14 +2,20 @@ import axios from 'axios';
 
 const InitialState = [];
 const FETCH_ROCKETS = 'FETCH_ROCKETS';
+const BOOK_ROCKET = 'BOOK_ROCKETS';
 
 const baseUrl = 'https://api.spacexdata.com/v3/rockets';
 
-const fetchRockets = (rockets) => ({
+export const fetchRockets = (rockets) => ({
   type: FETCH_ROCKETS,
   payload: {
     rockets,
   },
+});
+
+export const bookRocket = (payload) => ({
+  type: BOOK_ROCKET,
+  payload,
 });
 
 export const fetchRocketsFromServer = () => async (dispatch) => {
@@ -19,6 +25,7 @@ export const fetchRocketsFromServer = () => async (dispatch) => {
     name: rocket.rocket_name,
     type: rocket.rocket_type,
     images: rocket.flickr_images[0],
+    description: rocket.description,
   }));
   dispatch(fetchRockets(mappedRockets));
 };
@@ -27,6 +34,10 @@ const rocketReducer = (state = InitialState, action) => {
   switch (action.type) {
     case FETCH_ROCKETS:
       return [...state, ...action.payload.rockets];
+
+    case BOOK_ROCKET:
+      return state.map((rocket) => (
+        rocket.id === action.payload ? { ...rocket, reserved: true } : rocket));
 
     default:
       return state;

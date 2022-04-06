@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchRocketsFromServer } from '../redux/rockets/rockets';
+import { fetchRocketsFromServer, bookRocket } from '../redux/rockets/rockets';
+import './Rockets.css';
 
 const Rockets = () => {
   const rockets = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
-
   useEffect(() => {
     if (!rockets.length) dispatch(fetchRocketsFromServer());
   }, []);
@@ -14,14 +14,33 @@ const Rockets = () => {
     <div className="rocket">
       {rockets.map((rocket) => {
         const {
-          id, name, type, images,
+          id, name, description, images, reserved,
         } = rocket;
 
         return (
           <div key={id} className="eachRocket">
             <img src={images} alt="rocket" className="rocket-image" />
-            <p>{name}</p>
-            <p>{type}</p>
+            <div className="rocket-info">
+              <h3>{name}</h3>
+              <p className="reserve-sect">
+                {reserved === true && (
+                <span className="rev-word">
+                  Reserved
+                </span>
+                )}
+                {' '}
+                {description}
+              </p>
+              {reserved ? (
+                <button type="button" className="cancel-book">
+                  Cancel Reservation
+                </button>
+              ) : (
+                <button className="reserveBtn" type="button" onClick={() => dispatch(bookRocket(id))}>Reserve Rocket</button>
+
+              )}
+
+            </div>
           </div>
         );
       })}

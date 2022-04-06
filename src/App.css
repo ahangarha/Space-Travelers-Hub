@@ -6,21 +6,3 @@
 .font-sm {
   font-size: 0.85rem;
 }
-
-.rocket {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 1rem;
-  margin-left: 10rem;
-}
-
-.eachRocket {
-  display: flex;
-  gap: 5px;
-}
-
-.rocket-image {
-  height: 6rem;
-  width: 250px;
-}
