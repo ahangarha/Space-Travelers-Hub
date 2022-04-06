@@ -1,8 +1,24 @@
-import React from 'react';
+import { useSelector } from 'react-redux';
+import './Profile.css';
 
 function Profile() {
+  const missions = useSelector((state) => (state.missions.filter((mission) => mission.joined)));
+
   return (
-    <div>Profile</div>
+    <section className="profile-page-container container">
+      <div>
+        <h2>My Missions</h2>
+        <ul className="items-list">
+          {
+            missions.map((mission) => (
+              <li className="item" key={mission.id}>
+                {mission.name}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
   );
 }
 
