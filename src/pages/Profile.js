@@ -1,16 +1,8 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissions } from '../redux/missions/missions';
+import { useSelector } from 'react-redux';
 import './Profile.css';
 
 function Profile() {
-  const missions = useSelector((state) => (state.missions));
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (!missions.length) dispatch(fetchMissions());
-  }, []);
+  const missions = useSelector((state) => (state.missions.filter((mission) => mission.joined)));
 
   return (
     <section className="profile-page-container container">
