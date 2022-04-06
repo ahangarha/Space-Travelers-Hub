@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissions, joinMission } from '../redux/missions/missions';
+import { fetchMissions, joinMission, leaveMission } from '../redux/missions/missions';
 import './Missions.css';
 
 export default function Missions() {
@@ -52,6 +52,7 @@ export default function Missions() {
                     <button
                       type="button"
                       className="action-button leave-button"
+                      onClick={() => dispatch(leaveMission(mission.id))}
                     >
                       Leave Mission
                     </button>
