@@ -18,7 +18,7 @@ const Rockets = () => {
         } = rocket;
 
         return (
-          <div key={id} className="eachRocket">
+          <div key={id} className="eachRocket container">
             <img src={images} alt="rocket" className="rocket-image" />
             <div className="rocket-info">
               <h3>{name}</h3>
