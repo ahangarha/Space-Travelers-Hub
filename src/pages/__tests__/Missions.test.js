@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import store from '../redux/configureStore';
-import Missions from '../pages/Missions';
+import store from '../../redux/configureStore';
+import Missions from '../Missions';
 
 global.fetch = () => Promise.resolve({
   json: () => Promise.resolve([{
