@@ -15,4 +15,13 @@ describe('Header Component', () => {
 
     expect(branding).toBeVisible();
   });
+
+  it('shows links', () => {
+    render(<TestHeader />);
+    const rocketsLink = screen.getByRole('link', { name: /rockets/i });
+    const missionsLink = screen.getByRole('link', { name: /missions/i });
+
+    expect(rocketsLink).toBeVisible();
+    expect(missionsLink).toBeVisible();
+  });
 });
