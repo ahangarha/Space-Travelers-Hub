@@ -45,4 +45,13 @@ describe('Join and leave mission', () => {
     const statusElement = screen.getByRole('cell', { name: /active member/i });
     expect(statusElement).toBeVisible();
   });
+
+  it('leave me after clicking on leave button', () => {
+    // In the last test, we have joined and here we only need to leave.
+    render(<LocalMissions />);
+    const leaveButton = screen.getByRole('button', { name: 'Leave Mission' });
+    leaveButton.click();
+    const statusElement = screen.getByRole('cell', { name: /not a member/i });
+    expect(statusElement).toBeVisible();
+  });
 });
