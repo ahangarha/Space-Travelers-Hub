@@ -2,7 +2,11 @@
   border-collapse: collapse;
 }
 
-.missionTable > tr:nth-child(even) {
+.missionTable thead {
+  background-color: #ddd;
+}
+
+.missionTable tr:nth-child(even) {
   background-color: #eee;
 }
 
