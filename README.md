@@ -1,56 +1,64 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Space Traveler's Hub
 
-> Description the project.
-
+> An educational project to use React, React Router, Redux,...
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- React
+- Redux
 
-## Live Demo (if available)
+## Live Demo
 
 [Live Demo Link](https://sth-bonke-ahangarha.herokuapp.com/)
 ![screenshot](./screenshot.png)
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+You need nodejs and npm installed on your machine. If so, continue with the next steps.
+
 ### Setup
 
-### Install
+Install dependencies by running:
+
+`npm install`
 
 ### Usage
 
+Run live server by the following command:
+
+`npm start`
+
 ### Run tests
+
+`npm test`
 
 ### Deployment
 
+To deploy this project run the following command:
 
+`npm build`
+
+and copy the content of `build` directory to the root folder of your production environment.
 
 ## Authors
 
-👤 **Author1**
+👤 **Bonke Gcobo**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@BonkeGcobo](https://github.com/BonkeGcobo)
+- Twitter: [@bonke_gcobo](https://twitter.com/bonke_gcobo)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/bonke-gcobo-28a763125)
 
-👤 **Author2**
+👤 **Mostafa Ahagnarha**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@ahangarha](https://github.com/ahangarha)
+- Twitter: [@ahangarha](https://twitter.com/ahangarha)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/ahangarha)
 
 ## 🤝 Contributing
 
@@ -64,10 +72,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Linters configuration are made by Microverse
+- The logo has been taken from flaticon.com.
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](./LICENSE.md) licensed.
