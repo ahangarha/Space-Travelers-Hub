@@ -23,4 +23,16 @@ describe('Mission Page', () => {
     const element = screen.getByRole('heading', { name: 'Missions' });
     expect(element).toBeVisible();
   });
+
+  it('shows mission on the page', () => {
+    render(<LocalMissions />);
+    const elementName = screen.getByRole('cell', { name: 'some name' });
+    const elementDescrription = screen.getByRole('cell', { name: 'some description' });
+    const joinButton = screen.getByRole('button', { name: 'Join Mission' });
+    const elementStatus = screen.getByRole('cell', { name: /not a member/i });
+    expect(elementName).toBeVisible();
+    expect(elementDescrription).toBeVisible();
+    expect(joinButton).toBeVisible();
+    expect(elementStatus).toBeVisible();
+  });
 });
