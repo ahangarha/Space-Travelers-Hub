@@ -22,6 +22,7 @@
   padding: 0.15rem;
   font-size: 0.65rem;
   text-transform: uppercase;
+  min-width: 8rem;
 }
 
 .status-badge.joined {
@@ -37,6 +38,7 @@
   font-size: 0.85rem;
   margin-top: 1rem;
   cursor: pointer;
+  min-width: 8rem;
 }
 
 .action-button.join-button {
