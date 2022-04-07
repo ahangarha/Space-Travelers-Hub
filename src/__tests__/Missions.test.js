@@ -36,3 +36,13 @@ describe('Mission Page', () => {
     expect(elementStatus).toBeVisible();
   });
 });
+
+describe('Join and leave mission', () => {
+  it('joins me after clicking on join button', () => {
+    render(<LocalMissions />);
+    const joinButton = screen.getByRole('button', { name: 'Join Mission' });
+    joinButton.click();
+    const statusElement = screen.getByRole('cell', { name: /active member/i });
+    expect(statusElement).toBeVisible();
+  });
+});
