@@ -41,7 +41,7 @@ export const leaveMission = (id) => ({
 export default function reducer(state = [], action) {
   switch (action.type) {
     case FETCH_MISSIONS_SUCCESS:
-      return [...state, ...action.payload.missions];
+      return action.payload.missions;
 
     case JOIN_MISSION:
       return state.map((s) => (s.id === action.payload.id ? { ...s, joined: true } : s));
